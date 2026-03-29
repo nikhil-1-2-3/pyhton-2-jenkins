@@ -10,7 +10,7 @@ pipeline {
 
         stage('Run Python App') {
             steps {
-                bat 'python python/app.py'
+                bat 'python python/app.py Nikhil'
             }
         }
     }
