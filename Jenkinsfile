@@ -8,9 +8,15 @@ pipeline {
             }
         }
 
-        stage('Run Python App') {
+        stage('Build Docker Image') {
             steps {
-                bat 'python python/app.py Nikhil'
+                bat 'docker build -t python-app .'
+            }
+        }
+
+        stage('Run Docker Container') {
+            steps {
+                bat 'docker run python-app'
             }
         }
     }
